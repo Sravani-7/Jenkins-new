@@ -9,7 +9,7 @@ pipeline {
         stage('Docker Build') {
             steps {
                 sh 'docker image ls'
-                sh 'docker build -t madhavi/ .'
+                sh 'docker build -t madhavi/Nodejs .'
                 sh 'docker image ls'
             }
         }
