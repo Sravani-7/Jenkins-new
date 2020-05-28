@@ -8,12 +8,9 @@ pipeline {
         }
         stage('Docker Build') {
             steps {
-                pwsh(script: 'docker images ls')
-                pwsh(script: """
-                    docker images ls
-                    docker build -t nginx-image .
-                    docker images ls
-                """)
+                sh 'docker image ls'
+                sh 'docker build -t madhavi/nginx-image .'
+                sh 'docker image ls'
             }
         }
     }
